@@ -40,7 +40,7 @@ module "iam_policy_cluster_autoscaler" {
             "Condition": {
                 "StringEquals": {
                     "autoscaling:ResourceTag/k8s.io/cluster-autoscaler/enabled": "true",
-                    "autoscaling:ResourceTag/kubernetes.io/cluster-autoscaler/${var.eks_cluster_name}": "owned"
+                    "autoscaling:ResourceTag/k8s.io/cluster-autoscaler/${var.eks_cluster_name}": "owned"
                 }
             },
             "Effect": "Allow",
@@ -64,6 +64,9 @@ resource "local_file" "cluster_autoscaler" {
       "balance-similar-node-groups"   = "true"
       "skip-nodes-with-system-pods"   = "false"
       "skip-nodes-with-local-storage" = "false"
+    }
+    image = {
+      tag = "v1.22.2"
     }
     rbac = {
       create = true
