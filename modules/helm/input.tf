@@ -29,6 +29,10 @@ variable "external_dns_version" {
   default = "6.13.1"
 }
 
+variable "metric_server_version" {
+  default = "3.8.3"
+}
+
 variable "tags" {
   default = {}
 }
