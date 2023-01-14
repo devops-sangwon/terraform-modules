@@ -15,7 +15,7 @@ module "iam_policy_aws_load_balancer_controller" {
   path        = "/"
   description = "EKS aws-load-balancer-controller policy in ${var.eks_cluster_name}"
 
-  policy      = <<-EOF
+  policy = <<-EOF
     {
         "Version": "2012-10-17",
         "Statement": [
