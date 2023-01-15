@@ -43,7 +43,7 @@ resource "helm_release" "kubernetes_dashboard" {
 
 resource "kubernetes_service_account" "dashboard" {
   metadata {
-    name      = "eks-admin"
+    name      = "k8s-admin"
     namespace = "kubernetes-dashboard"
   }
 
@@ -52,7 +52,7 @@ resource "kubernetes_service_account" "dashboard" {
 
 resource "kubernetes_cluster_role_binding" "dashboard" {
   metadata {
-    name = "kubernetes-dashboard"
+    name = "k8s-dashboard"
   }
   role_ref {
     api_group = "rbac.authorization.k8s.io"
