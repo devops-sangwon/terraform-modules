@@ -33,6 +33,28 @@ variable "metric_server_version" {
   default = "3.8.3"
 }
 
+variable "kubernetes_dashboard_values" {
+  default = {}
+}
+
+variable "kubernetes_dashboard_domain" {
+  default = ""
+}
+
+variable "kubernetes_dashboard_version" {
+  default = "6.0.0"
+}
+
+variable "alb_waf_id" {
+  default = ""
+}
+
+variable "domain_acm" {
+  default = "arn:aws:acm:ap-northeast-2:002174788893:certificate/f56f4ce7-0c36-493f-b2cf-c9cc4944faa0"
+}
+
+
+
 variable "tags" {
   default = {}
 }
