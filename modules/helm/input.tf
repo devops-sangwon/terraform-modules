@@ -45,6 +45,29 @@ variable "kubernetes_dashboard_version" {
   default = "6.0.0"
 }
 
+variable "vault_enabled" {
+  default = true
+}
+
+variable "vault_chart_name" {
+  default = "vault"
+}
+
+variable "vault_version" {
+  default = "0.22.0"
+}
+
+variable "vault_namespace" {
+  default = "vault"
+}
+
+variable "vault_values" {
+  default = {}
+}
+variable "vault_domain" {
+  default = {}
+}
+
 variable "alb_waf_id" {
   default = ""
 }
