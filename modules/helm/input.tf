@@ -64,8 +64,25 @@ variable "vault_namespace" {
 variable "vault_values" {
   default = {}
 }
+
 variable "vault_domain" {
   default = {}
+}
+
+variable "kubecost_version" {
+  default = "1.99.0"
+}
+variable "kubecost_namespace" {
+  default = "kubecost"
+}
+variable "kubecost_values" {
+  default = {}
+}
+variable "kubecost_domain" {
+  default = {}
+}
+variable "external_dns_kubecost_hostname" {
+  default = ""
 }
 
 variable "alb_waf_id" {

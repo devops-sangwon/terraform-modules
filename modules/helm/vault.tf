@@ -14,7 +14,7 @@ module "iam_policy_vault" {
   name        = "vault-${var.eks_cluster_name}"
   path        = "/"
   description = "EKS vault policy in ${var.eks_cluster_name}"
-  policy = <<-EOF
+  policy      = <<-EOF
   {
       "Version": "2012-10-17",
       "Statement": [
