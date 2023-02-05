@@ -26,7 +26,7 @@ variable "external_dns_values" {
 }
 
 variable "external_dns_version" {
-  default = "6.13.1"
+  default = "6.13.2"
 }
 
 variable "metric_server_version" {
@@ -54,7 +54,7 @@ variable "vault_chart_name" {
 }
 
 variable "vault_version" {
-  default = "0.19.0"
+  default = "0.23.0"
 }
 
 variable "vault_namespace" {
