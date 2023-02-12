@@ -70,7 +70,7 @@ variable "vault_domain" {
 }
 
 variable "kubecost_version" {
-  default = "1.99.0"
+  default = "1.100.0"
 }
 variable "kubecost_namespace" {
   default = "kubecost"

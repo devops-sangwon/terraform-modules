@@ -1,6 +1,11 @@
 resource "local_file" "kubecost" {
   filename = "values/kubecost.yml"
   content = yamlencode(merge({
+    prometheus = {
+      nodeExporter = {
+        enabled = false
+      }
+    }
     ingress = {
       enabled  = true
       pathType = "Prefix"
