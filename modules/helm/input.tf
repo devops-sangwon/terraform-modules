@@ -46,7 +46,7 @@ variable "kubernetes_dashboard_version" {
 }
 
 variable "vault_enabled" {
-  default = true
+  default = false
 }
 
 variable "vault_chart_name" {
@@ -67,6 +67,10 @@ variable "vault_values" {
 
 variable "vault_domain" {
   default = {}
+}
+
+variable "kubecost_enabled" {
+  default = false
 }
 
 variable "kubecost_version" {

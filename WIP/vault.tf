@@ -10,6 +10,7 @@ module "iam_role_vault" {
 }
 
 module "iam_policy_vault" {
+  count       = var.vault_enabled ? 1 : 0
   source      = "terraform-aws-modules/iam/aws//modules/iam-policy"
   name        = "vault-${var.eks_cluster_name}"
   path        = "/"
@@ -139,6 +140,7 @@ resource "helm_release" "vault" {
 }
 
 resource "aws_dynamodb_table" "vault" {
+  count        = var.vault_enabled ? 1 : 0
   name         = "vault-in-${var.eks_cluster_name}"
   billing_mode = "PAY_PER_REQUEST"
   hash_key     = "Path"
@@ -156,10 +158,12 @@ resource "aws_dynamodb_table" "vault" {
 }
 
 resource "aws_kms_key" "vault" {
+  count       = var.vault_enabled ? 1 : 0
   description = "Vault KMS key in ${var.eks_cluster_name}"
   tags        = var.tags
 }
 resource "aws_kms_alias" "vault" {
+  count         = var.vault_enabled ? 1 : 0
   name          = "alias/vault-${var.eks_cluster_name}"
   target_key_id = aws_kms_key.vault.key_id
   depends_on    = [aws_kms_key.vault]
